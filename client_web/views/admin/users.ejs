@@ -1,0 +1,38 @@
+<%- include('../includes/head') %>
+<%- include('../includes/header') %>
+
+<div class="container">
+    <div class="row">
+		<div class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+            <div class="row">
+                <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="ui-block">
+                        <div class="ui-block-title">
+                            <h6 class="title">List of all Users</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <% for (var i = 0; i < users.length; i++) { %>
+                    <div class="col col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="ui-block">
+
+                            <div class="birthday-item inline-items">
+                                <div class="birthday-author-name">
+                                    <a class="h6 author-name"><%= users[i].firstName + ' ' + users[i].lastName %></a>
+                                    <div class="birthday-date"><%= users[i].role %></div>
+                                </div>
+                                <a href="/admin/users/<%= users[i].id %>" class="btn btn-sm bg-blue"">View</a>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                <% } %>
+			</div>
+		</div>
+        <%- include('../includes/admin-left-nav') %>
+	</div>
+</div>
+
+<%- include('../includes/footer') %>

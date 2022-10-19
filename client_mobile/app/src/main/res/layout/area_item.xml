@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:layout_marginTop="10dp">
+
+    <TextView
+        android:id="@+id/areaTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:text="TextView"
+        android:textSize="24sp">
+    </TextView>
+
+    <Button
+        android:id="@+id/removeAreaBtn"
+        android:layout_width="35dp"
+        android:layout_height="38dp"
+        android:text="x"
+        android:layout_gravity="top|right"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/colorPrimaryDark" />
+
+
+    <Button
+        android:id="@+id/editAreaBtn"
+        android:layout_width="35dp"
+        android:layout_height="38dp"
+        android:text="="
+        android:layout_gravity="top|right"
+        android:layout_marginRight="35dp"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/areaAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="action: "
+        android:layout_gravity="left"
+        android:layout_marginTop="30dp"
+        android:textSize="16sp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/areaActionDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="description"
+        android:layout_gravity="center|left"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/areaREAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="reaction: "
+        android:layout_gravity="bottom|left"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/areaREActionDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:text="description"
+        android:textSize="12sp"></TextView>
+
+</FrameLayout>

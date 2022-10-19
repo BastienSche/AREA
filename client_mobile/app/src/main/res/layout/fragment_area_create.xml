@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.AreaCreateFragment"
+    android:padding="10dp"
+    android:layout_margin="15dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create New Area"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:gravity="left"/>
+
+
+    <EditText
+        android:id="@+id/titleInput"
+        android:hint="Area Title"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"/>
+
+    <Spinner
+        android:id="@+id/actionSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp" />
+
+    <Spinner
+        android:id="@+id/reactionSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp" />
+
+    <Button
+        android:id="@+id/createBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="C r e a t e"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <Button
+        android:id="@+id/areaBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_horizontal"
+        android:layout_gravity="bottom"
+        android:text="B a c k"
+        android:textColor="@color/colorPrimaryDark" />
+
+
+
+
+</LinearLayout>

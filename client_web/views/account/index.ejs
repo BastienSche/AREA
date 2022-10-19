@@ -1,0 +1,95 @@
+<%- include('../includes/head') %>
+<%- include('../includes/header') %>
+
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Personal Information</h6>
+				</div>
+				<div class="ui-block-content">
+
+					
+					<!-- Personal Information Form  -->
+					
+					
+						<div class="row">
+					
+							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+								<div class="form-group label-floating">
+									<label class="control-label">First Name</label>
+									<input class="form-control" id="firstName" type="text" value="<%= user.firstName %>">
+								</div>
+					
+								<div class="form-group label-floating">
+									<label class="control-label">Your Email</label>
+									<input class="form-control" id="email" type="email" value="<%= user.email %>">
+								</div>
+							</div>
+					
+							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+								<div class="form-group label-floating">
+									<label class="control-label">Last Name</label>
+									<input class="form-control" id="lastName" type="text" value="<%= user.lastName %>">
+								</div>
+							</div>
+                            
+							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+								<a onclick="updatePersonalInformation()" class="btn btn-primary btn-lg full-width">Save all Changes</a>
+							</div>
+					
+						</div>
+					
+
+					<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+						<div class="h6">Providers OAuth2</div>
+
+						<div class="description-toggle">
+							<div class="description-toggle-content">
+								<div class="form-group with-icon label-floating">
+									<label class="control-label">Your Account</label>
+									<input class="form-control" placeholder="You are not connected.." value="<%= user.discordData ? user.discordData.username : '' %>">
+									<img style="position: absolute; top: 35%; margin-left: 15px;" width="20" height="20" src="/img/discord-logo.png" />
+								</div>
+							</div>
+							<div class="togglebutton">
+								<label>
+									<% if (user.discordData) { %>
+										<a onclick="removeProvider('discord')" class="btn btn-danger btn-lg full-width">Remove</a>
+									<% } else { %>
+										<a href="/oauth/discord" class="btn bg-secondary btn-lg full-width">Connect</a>
+									<% } %>
+								</label>
+							</div>
+						</div>
+
+						<div class="description-toggle">
+							<div class="description-toggle-content">
+								<div class="form-group with-icon label-floating">
+									<label class="control-label">Your Facebook Account</label>
+									<input class="form-control" placeholder="You are not connected.." value="<%= user.facebookData ? user.facebookData.displayName : '' %>">
+									<img style="position: absolute; top: 35%; margin-left: 15px;" width="20" height="20" src="/img/facebook-logo.png" />
+								</div>
+							</div>
+							<div class="togglebutton">
+								<label>
+									<% if (user.facebookData) { %>
+										<a onclick="removeProvider('facebook')" class="btn btn-danger btn-lg full-width">Remove</a>
+									<% } else { %>
+										<a href="/oauth/facebook" class="btn bg-secondary btn-lg full-width">Connect</a>
+									<% } %>
+								</label>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+        <%- include('../includes/account-left-nav') %>
+	</div>
+</div>
+
+
+<%- include('../includes/footer') %>

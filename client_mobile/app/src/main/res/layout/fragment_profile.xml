@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.LoginFragment"
+    android:padding="10dp"
+    android:layout_margin="15dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Personal Information"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:gravity="left"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/firstNameInput"
+            android:inputType="text"
+            android:hint="First Name"
+            android:layout_width="177dp"
+            android:layout_height="45dp"
+            android:layout_gravity="left" />
+
+        <EditText
+            android:id="@+id/lastNameInput"
+            android:hint="Last Name"
+            android:inputType="text"
+            android:layout_width="184dp"
+            android:layout_height="45dp"
+            android:layout_gravity="right" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/emailInput"
+        android:hint="Email address"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"/>
+
+    <Button
+        android:id="@+id/updateBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="Save all changes"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OAuth2"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:gravity="left"/>
+
+    <Button
+        android:id="@+id/areaBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="Area"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <Button
+        android:id="@+id/logoutBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_horizontal"
+        android:layout_gravity="bottom"
+        android:text="L o g o u t"
+        android:textColor="@color/colorPrimaryDark" />
+
+
+
+
+</LinearLayout>

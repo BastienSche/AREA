@@ -1,0 +1,98 @@
+<%- include('./includes/head') %>
+<%- include('./includes/header') %>
+
+<div class="container">
+	<div class="row">
+		
+		<% for (var y = 0; y < area.length; y++)  { %>
+			<div class="col col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+				<div class="ui-block">
+					<div style="background-color:#ff5e3a;" class="widget w-birthday-alert">
+						<div class="icons-block">
+							<a class="h4 title" style="color:#fff;"><%= area[y].title %></a>
+							<a onclick="removeArea('<%= area[y].id %>')" class="more"><svg class="olymp-albums-icon" style="width: 14px;"><use xlink:href="#olymp-close-icon"></use></svg></a>
+							<% if (area[y].status == "unconfigured") { %>
+								<a data-bs-toggle="modal" data-bs-target="#edit-<%= area[y].id.split('-')[0]  %>" class="more">
+									<svg class="olymp-albums-icon" style="width: 14px;margin-right:15px;"><use xlink:href="#olymp-menu-icon"></use></svg>
+								</a>
+							<% } %>
+						</div>
+					
+						<div class="content">
+							<span>ACTION: <%= area[y].action.name %></span>
+							<p><%= area[y].action.service.toUpperCase() + ' - '  + area[y].action.description %></p>
+							<span>REACTION: <%= area[y].reaction.name %></span>
+							<p><%= area[y].reaction.service.toUpperCase() + ' - '  + area[y].reaction.description %></p>
+							<span>STATUS: <%= area[y].status.toUpperCase() %></span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<% 	if (area[y].status == "unconfigured") { %>
+					<div class="modal fade show" id="edit-<%= area[y].id.split('-')[0]  %>" tabindex="-1" aria-labelledby="edit-<%= area[y].id.split('-')[0]  %>" style="display: none;" aria-modal="true" role="dialog">
+						<div class="modal-dialog window-popup edit-widget" role="document">
+							<div class="modal-content">
+								<a href="#" class="close icon-close" data-bs-dismiss="modal" aria-label="Close">
+									<svg class="olymp-close-icon"><use xlink:href="#olymp-close-icon"></use></svg>
+								</a>
+					
+								<div class="modal-header">
+									<h6 class="title">Area Configuration</h6>
+								</div>
+					
+								<div class="modal-body">
+									<%	if (area[y].action.service == "discord"  && user.discordData) { %>
+										<div class="form-group label-floating is-select">
+											<%	if (area[y].action.name == "new_message_in_channel") { %>										
+												<label class="control-label">Select Trigerred Channels</label>
+												<select id="actionParam-<%= area[y].id %>" class="form-select" required>
+													<% for (var i = 0; i < user.discordData.channels.length; i++) { %>
+														<option value="<%= user.discordData.channels[i].id %>"><%= user.discordData.channels[i].name %></option>
+													<% } %>
+												</select>
+											<% 	} else if (area[y].action.name == "new_message_by_user") { %>	
+												<label class="control-label">Select Trigerred Members</label>
+												<select id="actionParam-<%= area[y].id %>" class="form-select" required>
+													<% for (var i = 0; i < user.discordData.members.length; i++) { %>
+														<option value="<%= user.discordData.members[i].id %>"><%= user.discordData.members[i].username %></option>
+													<% } %>
+												</select>
+											<% } %>
+										</div>
+									<%	} %>
+
+									<%	if (area[y].reaction.service == "discord"  && user.discordData) { %>
+										<div class="form-group label-floating is-select">
+											<%	if (area[y].reaction.name == "send_message") { %>										
+												<label class="control-label">Select REAction Channels</label>
+												<select id="reactionParam-<%= area[y].id %>" class="form-select" required>
+													<% for (var i = 0; i < user.discordData.channels.length; i++) { %>
+														<option value="<%= user.discordData.channels[i].id %>"><%= user.discordData.channels[i].name %></option>
+													<% } %>
+												</select>
+											
+											</br>
+													<div class="form-group label-floating">
+														<label class="control-label">REAction Message Content</label>
+														<input id="messageContent-<%= area[y].id %>" class="form-control" name="content" type="text" value="">
+													</div>
+												
+											<% 	} %>
+										</div>	
+									<%	} %>
+									<div class="col col-lg-6 col-md-6 col-sm-6 col-6">
+										<a onclick="startArea('<%= area[y].id %>')" class="btn btn-primary btn-lg full-width" data-bs-dismiss="modal">Start</a>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+			<%	} 
+			} %>
+
+	</div>
+</div>
+
+<%- include('./includes/footer') %>

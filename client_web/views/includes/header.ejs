@@ -1,0 +1,115 @@
+<div class="fixed-sidebar left">
+	<div class="<%= pageTitle === 'Authentification' ? '' : 'fixed-sidebar-left' %> sidebar--small" id="sidebar-left">
+
+		<a href="/" class="logo">
+			<div class="title-block">
+				<div class="img-wrap">
+					<img loading="lazy" style="filter: brightness(0) invert(1); margin-bottom: 5px;" src="/img/epitech-logo.png" alt="Olympus" width="34" height="34">
+				</div>
+				<div class="sub-title">Area Web</div>
+			</div>
+		</a>
+
+		<% if (isAuthentificated) { %>
+			<div class="mCustomScrollbar" data-mcs-theme="dark">
+				<ul class="left-menu">
+					<% if (user.role == "Admin") { %>
+						<li>
+							<a href="/admin" class="js-sidebar-open">
+								<svg class="olymp-menu-icon left-menu-icon"  data-bs-toggle="tooltip" data-bs-placement="right"><use xlink:href="#olymp-home-icon"></use></svg>
+							</a>
+						</li>
+					<% } %>
+					<li>
+						<a href="/account" class="js-sidebar-open">
+							<svg class="olymp-menu-icon left-menu-icon"  data-bs-toggle="tooltip" data-bs-placement="right"><use xlink:href="#olymp-settings-v2-icon"></use></svg>
+						</a>
+					</li>
+					<li>
+						<a href="/area">
+							<svg class="olymp-albums-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right"><use xlink:href="#olymp-manage-widgets-icon"></use></svg>
+						</a>
+					</li>
+				</ul>
+			</div>
+		<% } %>
+	</div>
+
+</div>
+
+<header class="header" id="site-header">
+
+	<div class="header-content-wrapper">
+
+		<a class="logo"></a>
+		<% if (isAuthentificated) { %>
+		<div class="control-block">
+			<div class="author-page author vcard has-items more">
+				<div class="author-thumb">
+					<img class="avatar"> <svg class="olymp-happy-faces-icon "><use xlink:href="#olymp-happy-faces-icon"></use></svg></img>
+					<div class="more-dropdown more-with-triangle">
+						<div class="mCustomScrollbar" data-mcs-theme="dark">
+							<div class="ui-block-title ui-block-title-small">
+								<h6 class="title">Hello <%= user.firstName + ' ' + user.lastName %></h6>
+							</div>
+
+							<ul class="account-settings">
+								<li>
+									<a href="/auth/logout">
+										<svg class="olymp-logout-icon"><use xlink:href="#olymp-logout-icon"></use></svg>
+										<span>Log Out</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<% } %>
+	</div>
+
+</header>
+
+<header class="header header-responsive" id="site-header-responsive">
+
+	<div class="header-content-wrapper">
+		<ul class="nav nav-tabs mobile-notification-tabs" id="mobile-notification-tabs" role="tablist">
+			
+			<li class="nav-item">
+				
+				<a href="/" class="logo nav-link">
+					<img loading="lazy" style="filter: brightness(0) invert(1);" src="/img/epitech-logo.png" width="32" height="32">				
+				</a>
+
+			</li>
+
+			<% if (isAuthentificated) {
+				if (user.role == "Admin") { %>
+					<li class="nav-item">
+						<a href="/admin" class="nav-link">
+							<svg class="olymp-menu-icon left-menu-icon"><use xlink:href="#olymp-home-icon"></use></svg>
+						</a>
+					</li>
+				<% } %>
+
+				<li class="nav-item">
+					<a href="/area" class="nav-link">
+						<svg class="olymp-menu-icon left-menu-icon"><use xlink:href="#olymp-manage-widgets-icon"></use></svg>
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a href="/account" class="nav-link">
+						<svg class="olymp-menu-icon left-menu-icon"><use xlink:href="#olymp-settings-v2-icon"></use></svg>
+					</a>
+				</li>
+			<% } %>
+
+		</ul>
+	</div>
+
+</header>
+
+<div style="padding-top: 100px;"></div>

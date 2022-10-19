@@ -1,0 +1,8 @@
+<resources>
+    <string name="s_pref_file">eu.epitech.area.sh_preference_file</string>
+
+    <string name="s_pref_state">0</string>
+    <string name="s_pref_id"></string>
+    <string name="s_pref_accessToken"></string>
+    <string name="s_pref_refreshToken"></string>
+</resources>
