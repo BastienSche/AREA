@@ -6,3 +6,5 @@ The goal of this project is to discover, as a whole, the software platform that 
 To do this, you must implement a software suite that functions similar to that of IFTTT and/or Zapier.
 
 ![Image_test](./Sujet/B-DEV-510_area.pdf)
+
+xfun::embed_file("./Sujet/B-DEV-510_area.pdf")
